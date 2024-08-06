@@ -1,0 +1,110 @@
+<div
+  style="
+    border-radius: 10px;
+    background-color: #121212;
+    border-radius: 10px;
+    color: #ffffff;
+    margin-top: 4.6rem;
+  "
+>
+  <div style=" display: flex; align-content: center; justify-content: start; padding: 10px;">
+    <div
+      style="
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+      "
+    >
+      <svg
+        style="width: 20px; height: 20px"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 320 512"
+      >
+        <path
+          fill="#919191"
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+        />
+      </svg>
+    </div>
+    <div
+      style="
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <svg
+        style="width: 20px; height: 20px"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 320 512"
+      >
+        <path
+          fill="#949494"
+          d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    style="
+      background-image: linear-gradient(
+        0deg,
+        hsl(0deg 0% 7%) 0%,
+        hsl(344deg 0% 9%) 11%,
+        hsl(344deg 0% 10%) 22%,
+        hsl(344deg 0% 12%) 33%,
+        hsl(344deg 0% 13%) 44%,
+        hsl(344deg 0% 15%) 56%,
+        hsl(344deg 0% 17%) 67%,
+        hsl(344deg 0% 18%) 78%,
+        hsl(344deg 0% 20%) 89%,
+        hsl(0deg 0% 22%) 100%
+      );
+      display: flex;
+      flex-wrap: wrap;
+    "
+  >
+    <div
+      class="hovered"
+      *ngFor="let item of data$ | async"
+      style="padding: 10px; margin: 2rem"
+    >
+      <div>
+        <div (click)="deleteMusic(item.id)">&#8904;</div>
+        <img
+          src="{{ item.imglink }}"
+          style="
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+          "
+        />
+        <p style="letter-spacing: 2px; font-weight: 700">{{ item.name }}</p>
+        <p
+          (click)="updateMusic(item.id)"
+          style="
+          width: 5rem;
+            letter-spacing: 2px;
+            padding: 5px;
+            border-radius: 27px;
+            color: black;
+            background-color: white;
+            text-align: center;
+          "
+        >
+          Update
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

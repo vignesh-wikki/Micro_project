@@ -1,0 +1,18 @@
+.app-component {
+  background-color: black;
+}
+.view {
+  display: grid;
+  grid-template-areas: sidebar contents contents;
+  gap: 8px;
+}
+.sidebar {
+  width: 300px;
+  color: #ffffff;
+  grid-area: sidebar;
+}
+
+.contents {
+  grid-area: contents / span 9;
+  border-radius: 10px;
+}
